@@ -1,0 +1,24 @@
+{
+    "name": "qanna/laravel-password-monitor",
+    "description": "A laravel package that alerts you when your password has been changed",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Qanna\\PasswordMonitor\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Qanna\\PasswordMonitor\\Tests\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ikageng Tladi",
+            "email": "tladiomphile@gmail.com"
+        }
+    ],
+    "require-dev": {
+        "orchestra/testbench": "^9.1"
+    }
+}
