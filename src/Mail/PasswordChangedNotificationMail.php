@@ -14,11 +14,16 @@ class PasswordChangedNotificationMail extends Mailable
     use Queueable, SerializesModels;
 
     /**
+     * @var \App\Models\User
+     */
+    public $user;
+
+    /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct($user = null)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -36,7 +41,7 @@ class PasswordChangedNotificationMail extends Mailable
      */
     public function content(): Content
     {
-        
+
         return new Content(
             markdown: 'laravel-guardian::mail.password-changed-notification-mail',
         );

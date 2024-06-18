@@ -12,7 +12,9 @@ trait HasGuardian
 {
     public static function booted()
     {
-        static::observe(PasswordObserver::class);
+        static::updated(function($user) {
+            $user->sendPasswordNotification();
+        });
     }
 
     /**
@@ -22,7 +24,7 @@ trait HasGuardian
      */
     public function passwordChangedNotificationMail(): Mailable
     {
-        return new PasswordChangedNotificationMail;
+        return new PasswordChangedNotificationMail($this);
     }
 
 
