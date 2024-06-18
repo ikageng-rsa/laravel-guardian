@@ -1,15 +1,16 @@
 {
-    "name": "qanna/laravel-password-monitor",
+    "name": "qanna/laravel-guardian",
     "description": "A laravel package that alerts you when your password has been changed",
     "license": "MIT",
+    "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "Qanna\\PasswordMonitor\\": "src/"
+            "Qanna\\Guardian\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Qanna\\PasswordMonitor\\Tests\\": "tests/"
+            "Qanna\\Guardian\\Tests\\": "tests/"
         }
     },
     "authors": [
@@ -20,5 +21,12 @@
     ],
     "require-dev": {
         "orchestra/testbench": "^9.1"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Qanna\\Guardian\\GuardianServiceProvider"
+            ]
+        }
     }
 }
