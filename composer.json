@@ -1,8 +1,23 @@
 {
     "name": "qanna/laravel-guardian",
-    "description": "A laravel package that alerts you when your password has been changed",
+    "description": "Package that alerts you when your password has been changed",
     "license": "MIT",
     "minimum-stability": "dev",
+    "prefer-stable": true,
+    "keywords": [
+    	"laravel",
+    	"qanna",
+    	"security",
+    	"password",
+    	"guardian"
+    ],
+    "authors": [
+        {
+            "name": "Ikageng Tladi",
+            "email": "tladiomphile@gmail.com",
+            "role": "Developer"
+        }
+    ],
     "autoload": {
         "psr-4": {
             "Qanna\\Guardian\\": "src/"
@@ -13,12 +28,6 @@
             "Qanna\\Guardian\\Tests\\": "tests/"
         }
     },
-    "authors": [
-        {
-            "name": "Ikageng Tladi",
-            "email": "tladiomphile@gmail.com"
-        }
-    ],
     "require-dev": {
         "orchestra/testbench": "^9.1"
     },
