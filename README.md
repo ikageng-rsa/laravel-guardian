@@ -1,6 +1,10 @@
 # Laravel Guardian
   Laravel Guardian is a comprehensive security package designed for Laravel applications. This package provides functionalities to enhance the security of user accounts, starting with email notifications for password changes. Future versions will include additional features such as login activity logging, pattern detection, two-factor authentication, and account lockout capabilities.
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/qanna/laravel-guardian.svg?style=flat-square)](https://packagist.org/packages/qanna/laravel-guardian)
+[![Total Downloads](https://img.shields.io/packagist/dt/qanna/laravel-guardian.svg?style=flat-square)](https://packagist.org/packages/qanna/laravel-guardian)
+
+
 ## Installation
 
   You can install the package via composer:
@@ -62,6 +66,6 @@
 
 ## License
 
-Laravel Guardian is open-source software licensed under the MIT license.
+Laravel Guardian is open-source software licensed under the [MIT license](LICENSE.md).
 
 
