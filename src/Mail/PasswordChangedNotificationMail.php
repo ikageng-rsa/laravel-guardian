@@ -1,6 +1,6 @@
 <?php
 
-namespace Qanna\PasswordMonitor\Mail;
+namespace Qanna\Guardian\Mail;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
@@ -36,8 +36,9 @@ class PasswordChangedNotificationMail extends Mailable
      */
     public function content(): Content
     {
+        
         return new Content(
-            markdown: 'mail.password-changed-notification-mail',
+            markdown: 'laravel-guardian::mail.password-changed-notification-mail',
         );
     }
 
