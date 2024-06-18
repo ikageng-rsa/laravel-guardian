@@ -2,7 +2,8 @@
 
 namespace Qanna\Guardian\Traits;
 
-use Illuminate\Mail\Mailable;
+use Illuminate\Contracts\Mail\Mailable;
+use Illuminate\Mail\PendingMail;
 use Illuminate\Support\Facades\Mail;
 use Qanna\Guardian\Mail\PasswordChangedNotificationMail;
 use Qanna\Guardian\Observers\PasswordObserver;
@@ -15,25 +16,41 @@ trait HasGuardian
     }
 
     /**
-     * Returns a mail object
+     * Returns a mailable obkect
      * 
-     * @return Illuminate\Mail\Mailable;
+     * @return \Illuminate\Contracts\Mail\Mailable
      */
     public function passwordChangedNotificationMail(): Mailable
     {
         return new PasswordChangedNotificationMail;
     }
 
+
+    /**
+     * Checks if the password has been chanhed
+     * 
+     * @return bool
+     */
     private function passwordChanged(): bool
     {
         return $this->wasChanged(config('guardian.database.password_column_name'));
     }
 
+    /**
+     * Returns a configuration setting to que notifications
+     * 
+     * @return bool
+     */
     private function shouldPasswordNotificationBeQueued(): bool
     {
         return config('guardian.que_notifications', false);
     }
 
+    /**
+     * Sends a notification if conditions are met
+     * 
+     * @return null|\Illuminate\Mail\PendingMail
+     */
     public function sendPasswordNotification()
     {
         if(!config('guardian.notify', false))

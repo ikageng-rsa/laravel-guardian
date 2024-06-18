@@ -12,21 +12,19 @@ class GuardianServiceProvider extends ServiceProvider
             $this->registerPublishing();
         }
 
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-password-monitor');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-guardian');
 
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(
-            __DIR__.'/../config/guardian.php', 'guardian'
-        );
+        //
     }
 
     private function registerPublishing()
     {
         $this->publishes([
             __DIR__."/../config/guardian.php" => config_path('guardian.php'),
-        ], 'password-monitor-config');   
+        ], 'guardian-config');   
     }
 }

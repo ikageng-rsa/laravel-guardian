@@ -13,7 +13,7 @@ class TestCase extends OrchestraTestCase
         
         $this->loadMigrationsFrom(
             __DIR__.'/../database/migrations/'
-        );
+        );        
 
     }
 
@@ -32,7 +32,9 @@ class TestCase extends OrchestraTestCase
             'driver' => 'sqlite',
             'database' => ':memory:',
         ]);
-
+        $config = require __DIR__.'/../config/guardian.php';
+        $app['config']->set('guardian', $config);
+       
 
     }
 }
